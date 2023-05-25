@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="aboutus.html">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BUISINESS DIVISIONS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MEDIA CENTRE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="career.html">CAREERS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<div class="container">
+    <div class="row">
+<div class="col-md-6">
+
+    <form id="submit-form" onsubmit="validateForm(event)" class="needs-validation" novalidate>
+               <!-- Form fields -->
+               <div class="mb-3">
+                 <label for="validationServer01" class="form-label">Name</label>
+                 <input type="text" name="Name" class="form-control is-valid" id="validationServer01" required>
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+               <div class="mb-3">
+                 <label for="validationServer02" class="form-label">Email</label>
+                 <input type="email" name="Email" class="form-control is-valid" id="validationServer02" required>
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+               <div class="mb-3">
+                 <label for="validationServer03" class="form-label">Mobile</label>
+                 <input type="tel" name="Mobile" class="form-control is-valid" id="validationServer03" required>
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+               </div><div class="mb-3">
+                 <label for="validationServer04" class="form-label">Job Post</label>
+                 <input type="text" name="Purpose of Contact" class="form-control is-valid" id="validationServer04" required>
+                 <div class="valid-feedback">
+                   Looks good!
+                 </div>
+               <div class="col-12">
+                 <div class="form-check">
+                   <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                   <label class="form-check-label" for="invalidCheck3">
+                     Agree to terms and conditions
+                   </label>
+                   <div id="invalidCheck3Feedback" class="invalid-feedback">
+                     You must agree before submitting.
+                   </div>
+                 </div>
+               </div>
+               <div class="col-12">
+                 <button class="btn btn-primary" type="submit">Submit form</button>
+               </div>
+             </form>
+</div>
+    </div>
+</div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+ <!-- Footer -->
+ <footer class="bg-light py-4">
+    <div class="container text-center">
+        <p>&copy; 2023 RPGroup. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JavaScript code -->
+<script src="assets/js/main.js"></script>
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
+
+</body>
+
+</html>
